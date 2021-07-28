@@ -36,13 +36,12 @@
       </layout>
    </appender>
    
-   <appender name="droll_log" class="org.apache.log4j.DailyRollingFileAppender">
-      <param name="Threshold" value="DEBUG" />
+   <appender name="daily_log" class="org.apache.log4j.DailyRollingFileAppender">
+      <param name="file" value="./note/log/daily_log.log" />
       <param name="Append" value="true" />
-      <param name="file" value="./note/log/daily_test.log" />
       <param name="DatePattern" value="'.'yyyy-MM-dd" />      
       <layout class="org.apache.log4j.PatternLayout">
-         <param name="conversionPattern" value="%d{yyyy-MM-dd hh:mm:ss aa} [%p] - %C{1}. %M(%L) | %m%n" />
+         <param name="ConversionPattern" value="%t> [%d{yyyy-MM-dd HH:mm:ss}] [%c{1}] [%L] [%p] %m %n"/>          
       </layout>
    </appender>
    
@@ -94,7 +93,7 @@
    
     <logger name="com.kgitbank.service.DRollTest">
       <level value="info" />
-      <appender-ref ref="droll_log" />      
+      <appender-ref ref="daily_log" />      
    </logger>
    
    <!-- 
