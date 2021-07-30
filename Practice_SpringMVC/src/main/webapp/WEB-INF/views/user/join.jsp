@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,18 +23,13 @@
 
 이곳에서 회원 정보를 입력하세여
 
-	<form role="form" method="post" autocomplete="off">
-		<p>
-			<label for="userId">아이디</label> <input type="text" id="userId"
-				name="userId" />
-		</p>
-		<p>
-			<label for="userPass">비밀번호</label> <input type="password"
-				id="userPass" name="userPass" />
-		</p>
-		<p>
-			<button type="submit">로그인</button>
-		</p>
+	<form action="<c:url value="/hello/join"/>" method="post">
+		ID : <input type="text" name="id" /> <br />
+		PASSWORD : <input type="password" name="password" /><br />
+		이름 : <input type="text" name="name" /><br />
+		나이 : <input type="number" name="age" /><br />
+		생일 : <input type="date" name="birthday"  /><br />
+		<input type="submit" /><br />
 	</form>
 
 </body>
