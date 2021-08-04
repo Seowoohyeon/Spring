@@ -50,7 +50,7 @@ public class MybatisTest {
 			fail(e.getMessage());
 		}
 	}
-	@Ignore
+	
 	@Test
 	public void getEmpListTest() {
 		List<Employee> employees = empMapper.getEmpList();
@@ -106,6 +106,7 @@ public class MybatisTest {
 		System.out.println(employee);
 	}
 	
+	@Ignore
 	@Test
 	public void createEmployee() {
 		Employee e = new Employee("Minsu", "KMinsu", new Date(), "IT_PROG");
